@@ -1,0 +1,10 @@
+clickbus_exercise_homepage:
+    path:     /
+    defaults: { _controller: ClickbusExerciseBundle:Default:index }
+_exercise1:
+    path:     /exercise1/
+    defaults: { _controller: ClickbusExerciseBundle:Default:exercise1 }
+
+_exercise2:
+    path:     /exercise2/
+    defaults: { _controller: ClickbusExerciseBundle:Default:exercise2 }

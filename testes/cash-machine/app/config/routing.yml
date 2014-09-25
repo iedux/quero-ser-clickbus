@@ -1,0 +1,4 @@
+# app/config/routing.yml
+acme_website:
+    resource: "@ClickbusExerciseBundle/Resources/config/routing.yml"
+    prefix:   /

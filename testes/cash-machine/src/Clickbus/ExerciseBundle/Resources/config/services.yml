@@ -1,0 +1,7 @@
+parameters:
+#    clickbus_exercise.example.class: Clickbus\ExerciseBundle\Example
+
+services:
+#    clickbus_exercise.example:
+#        class: %clickbus_exercise.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,111 @@
+{% extends 'ClickbusExerciseBundle::layout.html.twig' %}
+{% set menu = 'exercise1' %}
+ {% block body %}
+
+ 	<div class="row">
+ 		<div class="col-lg-3">
+
+ 			<h3>Welcome Client</h3>
+			<h4>Balance is:<br> $ infinity CA$H</h4>
+ 		</div>
+ 	
+
+ 		<div class="col-lg-4">
+
+			<h1 class="page-header">{{ title }}!</h1>
+
+
+		 	<form action="" method="POST" id="contact_form">
+		        {{ form_errors(form) }}
+
+		        {{ form_row(form.amount) }}
+
+
+	        	<div id="numericInput" >
+				    <div id="numBox"></div>
+				    <table id="keypad" >
+				        <tr>
+				            <td class="key">1</td>
+				            <td class="key">2</td>
+				            <td class="key">3</td>
+				        </tr>
+				        <tr>
+				            <td class="key">4</td>
+				            <td class="key">5</td>
+				            <td class="key">6</td>
+				        </tr>
+				        <tr>
+				            <td class="key">7</td>
+				            <td class="key">8</td>
+				            <td class="key">9</td>
+				        </tr>
+				        <tr>
+				            <td class=""></td>
+				            <td class="key">0</td>
+				            <td class=""></td>
+				        </tr>
+				    </table>
+				    
+				</div>
+
+				<br>
+
+		        <div class="row">
+		        	<div class="col-lg-4"><input type="button" value="Clear" id="clearform" class="btn btn-default btn-lg btn-block" /></div>
+		        	<div class="col-lg-4"></div>
+		        	<div class="col-lg-4"><input type="button" value="Enter"  id="getmymoney"class="btn btn-primary btn-lg btn-block" /></div>
+
+		        </div>
+		        
+
+	        	{{ form_rest(form) }}
+
+		    </form>
+
+
+ 		</div>
+ 		<div class="col-lg-1"></div>
+ 		<div class="col-lg-3">
+
+ 			<div id='errormsg'> Ops! The amount required must be multiple of 10</div>
+
+
+ 			{% if showresult == true %}
+
+ 				<div id='resultmsg'>
+
+	 				<table class="table">
+	 					<thead>
+	 						<th>Denomination</th>
+	 						<th>#Tickets</th>
+	 					</thead>
+	 					<tbody>
+	 						<tr><td colspan="2"> <img id="imagecash" src="/bundles/clickbusexcercise/images/shared-banking.jpg"/></td></tr>
+	 						{% if tickets['tickets1'] != 0 %}
+		    					<tr><td>$100</td><td>{{ tickets['tickets1'] }}</td></tr>
+		    				{% endif %}
+		    				{% if tickets['tickets2'] != 0 %}
+		    					<tr><td>$50</td><td>{{ tickets['tickets2'] }}</td></tr>
+		    				{% endif %}
+		    				{% if tickets['tickets3'] != 0 %}
+		    					<tr><td>$20</td><td>{{ tickets['tickets3'] }}</td></tr>
+		    				{% endif %}
+		    				{% if tickets['tickets4'] != 0 %}
+		    					<tr><td>$10</td><td>{{ tickets['tickets4'] }}</td></tr>
+		    				{% endif %}
+	 					</tbody>
+		    			
+	    			</table>
+	    		</div>
+			{% endif %}
+
+
+ 		</div>
+
+
+ 	</div>
+
+ 	 
+
+
+ {% endblock %}
